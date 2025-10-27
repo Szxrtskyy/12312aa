@@ -17,12 +17,23 @@ public class Main {
         System.out.println(uczen2);
         System.out.println("Liczna uczniow "+Uczen.getLiczbaUczniow()+"");
 
-        Nauczyciel nauczcielFizyki = new Nauczyciel("Edmund",70,"fizyka");
+        Wychowawca nauczcielFizyki = new Wychowawca("Edmund",70,"fizyka");
         System.out.println(nauczcielFizyki);
+        Wychowawca wychowawca = new Wychowawca("Ewelina",60,"technika");
 
         nauczcielFizyki.wykonajDyzur();
         uczen1.wykonajDyzur();
         //polimorfizm
 
+        Klasa klasa = new Klasa("3a", (Wychowawca) nauczcielFizyki);
+        System.out.println(klasa);
+        klasa.dodajUcznaDoKlasy(uczen);
+        klasa.dodajUcznaDoKlasy(uczen1);
+        klasa.dodajUcznaDoKlasy(uczen2);
+        System.out.println(klasa);
+        klasa.dodajUcznaDoKlasy(uczen);
+
+        Szkoła szkoła = Szkoła.zwrocObiektSzkola("ZS10");
+        System.out.println(szkoła);
     }
 }
